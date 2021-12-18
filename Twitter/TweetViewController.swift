@@ -18,7 +18,8 @@ class TweetViewController: UIViewController {
     }
     
     @IBOutlet weak var tweetTextView: UITextView!
-
+    @IBOutlet weak var countLabel: UILabel!
+    
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -37,6 +38,7 @@ class TweetViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
         }
     }
+    
     
     /*
     // MARK: - Navigation

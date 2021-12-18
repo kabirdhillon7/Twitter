@@ -55,7 +55,7 @@
         <!--Home-->
         <scene sceneID="wq7-pF-dz5">
             <objects>
-                <tableViewController id="Ona-pL-Fcy" customClass="HomeTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Ona-pL-Fcy" customClass="HomeViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="XIo-vF-pxY">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,13 +149,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Home" id="ZSY-Ly-GWW">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="NYS-FO-jMX">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" image="arrow.forward.to.line" catalog="system" id="NYS-FO-jMX">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="onLogout:" destination="Ona-pL-Fcy" id="4f0-em-A3w"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Tweet" style="plain" id="ysq-z1-eHc">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.pencil" catalog="system" style="plain" id="ysq-z1-eHc">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="V7a-5s-L4U" kind="presentation" id="Zt7-Ws-2hq"/>
@@ -194,13 +194,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="08d-vN-aY5">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="jdU-db-8tk">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" image="close-icon" id="jdU-db-8tk">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="cancel:" destination="KgF-zr-EYx" id="IOd-kU-eR9"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Tweet" id="FTy-8U-9bb">
+                        <barButtonItem key="rightBarButtonItem" title="Tweet" image="checkmark" catalog="system" id="FTy-8U-9bb">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="tweet:" destination="KgF-zr-EYx" id="2fK-WC-8fu"/>
@@ -213,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ed-EU-kng" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3533" y="144"/>
+            <point key="canvasLocation" x="3532.7102803738317" y="143.84449244060477"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Qy-F9-sNg">
@@ -283,8 +283,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.forward.to.line" catalog="system" width="128" height="89"/>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="close-icon" width="26" height="24"/>
         <image name="favor-icon" width="30" height="30"/>
         <image name="retweet-icon" width="30" height="30"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeTableViewController: UITableViewController {
+class HomeViewController: UITableViewController {
 
     var tweetArray = [NSDictionary]()
     var numberOfTweets: Int!
@@ -95,7 +95,6 @@ class HomeTableViewController: UITableViewController {
         
         if let imageData = data {
             cell.profileImageView.image = UIImage(data: imageData)
-            
         }
         
         cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
