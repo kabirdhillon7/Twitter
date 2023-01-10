@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeViewController: UITableViewController {
-
+    
     var tweetArray = [NSDictionary]()
     var numberOfTweets: Int!
     
@@ -74,7 +74,7 @@ class HomeViewController: UITableViewController {
             loadMoreTweets()
         }
     }
-   
+    
     @IBAction func onLogout(_ sender: Any) {
         TwitterAPICaller.client?.logout()
         self.dismiss(animated: true, completion: nil)
@@ -99,23 +99,23 @@ class HomeViewController: UITableViewController {
         
         cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
         cell.setfavorite(isFavorited: tweetArray[indexPath.row]["favorited"] as! Bool)
-        cell.setRetweeted(isRetweeted: tweetArray[indexPath.row]["retweeted"] as! Bool)        
+        cell.setRetweeted(isRetweeted: tweetArray[indexPath.row]["retweeted"] as! Bool)
         
         return cell
     }
     
     
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return tweetArray.count
     }
-
-
+    
+    
 }
