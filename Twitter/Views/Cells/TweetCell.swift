@@ -17,6 +17,11 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var retweetButton: UIButton!
     @IBOutlet weak var favButton: UIButton!
     
+    
+    @IBOutlet weak var favCountLabel: UILabel!
+    @IBOutlet weak var retweetCountLabel: UILabel!
+    
+    
     var favorited: Bool = false
     var tweetId: Int = -1
     var retweeted: Bool = false

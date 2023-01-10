@@ -12,9 +12,7 @@ import AlamofireImage
 
 class HomeViewController: UITableViewController {
     
-    var vm = HomeViewModel()
-    
-    //var tweetArray = [Tweet]()
+    var homeViewModel = HomeViewModel()
     var numberOfTweets: Int!
     
     let myRefreshControl = UIRefreshControl()
@@ -23,8 +21,8 @@ class HomeViewController: UITableViewController {
         super.viewDidLoad()
         
         // Bind to HomeVM
-        vm = HomeViewModel()
-        vm.bindHomeViewModelToController = { [weak self] in
+        homeViewModel = HomeViewModel()
+        homeViewModel.bindHomeViewModelToController = { [weak self] in
             guard let strongSelf = self else {
                 return
             }
@@ -46,7 +44,7 @@ class HomeViewController: UITableViewController {
     @objc func loadTweets(){
         numberOfTweets = 20
         
-        vm.fetchTweets(numberOfTweets: numberOfTweets) {
+        homeViewModel.fetchTweets(numberOfTweets: numberOfTweets) {
             self.tableView.reloadData()
             self.myRefreshControl.endRefreshing()
         }
@@ -54,7 +52,7 @@ class HomeViewController: UITableViewController {
     
     func loadMoreTweets(){
         numberOfTweets = numberOfTweets + 20
-        vm.updateTweets(numberOfTweets: numberOfTweets) {
+        homeViewModel.updateTweets(numberOfTweets: numberOfTweets) {
             self.tableView.reloadData()
         }
     }
@@ -67,7 +65,7 @@ class HomeViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row + 1 == vm.tweets.count {
+        if indexPath.row + 1 == homeViewModel.tweets.count {
                 loadMoreTweets()
             }
         }
@@ -75,20 +73,16 @@ class HomeViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCell
         
-        let tweet = vm.tweets[indexPath.row]
-        //let user = tweetArray[indexPath.row]["user"] as! NSDictionary
+        let tweet = homeViewModel.tweets[indexPath.row]
         
         cell.userNameLabel.text = tweet.user.name
         cell.tweetContent.text = tweet.content
-        
-        //let url = URL(string: (user["profile_image_url_https"] as? String)!)
-        //if let imageUrl = url {
         cell.profileImageView.af_setImage(withURL: tweet.user.profileImageUrl)
-        //}
-        
         cell.tweetId = tweet.id
         cell.setfavorite(isFavorited: tweet.favorited)
         cell.setRetweeted(isRetweeted: tweet.retweeted)
+        cell.favCountLabel.text = String(tweet.favoriteCount)
+        cell.retweetCountLabel.text = String(tweet.retweetCount)
         
         return cell
     }
@@ -100,6 +94,6 @@ class HomeViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return vm.tweets.count
+        return homeViewModel.tweets.count
     }
 }
