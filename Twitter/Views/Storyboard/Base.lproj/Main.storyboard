@@ -164,15 +164,15 @@
             </objects>
             <point key="canvasLocation" x="2976.1682242990651" y="143.84449244060477"/>
         </scene>
-        <!--Tweet View Controller-->
+        <!--Compose Tweet View Controller-->
         <scene sceneID="g1V-fp-4gb">
             <objects>
-                <viewController id="KgF-zr-EYx" customClass="TweetViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KgF-zr-EYx" customClass="ComposeTweetViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0vG-su-liY">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="869"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fAs-i3-mSH">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fAs-i3-mSH">
                                 <rect key="frame" x="0.0" y="88" width="428" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>

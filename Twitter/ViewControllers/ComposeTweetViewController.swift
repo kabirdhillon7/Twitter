@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TweetViewController: UIViewController {
+class ComposeTweetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
