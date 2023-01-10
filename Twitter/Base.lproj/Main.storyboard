@@ -61,7 +61,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="150" id="FYI-2p-vlJ" customClass="TweetCellTableViewCell" customModule="Twitter" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="150" id="FYI-2p-vlJ" customClass="TweetCell" customModule="Twitter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="428" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FYI-2p-vlJ" id="NpW-rO-Kef">
@@ -76,14 +76,14 @@
                                                 <constraint firstAttribute="width" secondItem="XE3-Nn-N5p" secondAttribute="height" multiplier="1:1" id="fMN-d8-BZC"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="John Doe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WrB-xd-v7o">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WrB-xd-v7o">
                                             <rect key="frame" x="74" y="0.0" width="344" height="18"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Tweet content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efV-HX-GMT">
-                                            <rect key="frame" x="74" y="20" width="344" height="14.333333333333336"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Tweet content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efV-HX-GMT">
+                                            <rect key="frame" x="74" y="20" width="344" height="96"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -146,7 +146,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Home" id="ZSY-Ly-GWW">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" image="arrow.forward.to.line" catalog="system" id="NYS-FO-jMX">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" image="arrow.right.to.line.compact" catalog="system" id="NYS-FO-jMX">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="onLogout:" destination="Ona-pL-Fcy" id="4f0-em-A3w"/>
@@ -187,6 +187,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fAs-i3-mSH" firstAttribute="leading" secondItem="xf5-vN-IuE" secondAttribute="leading" id="7oN-E4-tKj"/>
+                            <constraint firstItem="fAs-i3-mSH" firstAttribute="top" secondItem="xf5-vN-IuE" secondAttribute="top" constant="32" id="Tkz-Wa-PUm"/>
                             <constraint firstItem="xf5-vN-IuE" firstAttribute="trailing" secondItem="fAs-i3-mSH" secondAttribute="trailing" id="XC0-J9-pAF"/>
                         </constraints>
                     </view>
@@ -253,7 +254,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHF-0p-57t">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHF-0p-57t">
                                 <rect key="frame" x="114" y="213" width="200" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="ClT-0G-fH0"/>
@@ -262,12 +263,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8V0-vq-2sz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8V0-vq-2sz">
                                 <rect key="frame" x="164" y="113" width="100" height="96.666666666666686"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="2cq-f7-AxP"/>
                                     <constraint firstAttribute="height" constant="100" id="2q4-eo-Iid"/>
-                                    <constraint firstAttribute="width" secondItem="8V0-vq-2sz" secondAttribute="height" multiplier="100:103" id="5Tt-Zx-BzP"/>
+                                    <constraint firstAttribute="width" secondItem="8V0-vq-2sz" secondAttribute="height" multiplier="1:1" id="ukA-nl-ROI"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -279,6 +280,9 @@
                             <constraint firstItem="5ou-ab-LOl" firstAttribute="bottom" secondItem="iHF-0p-57t" secondAttribute="bottom" constant="606" id="DsF-H7-zKg"/>
                             <constraint firstItem="8V0-vq-2sz" firstAttribute="top" secondItem="5ou-ab-LOl" secondAttribute="top" constant="20" id="KSS-sg-a1i"/>
                             <constraint firstItem="iHF-0p-57t" firstAttribute="top" secondItem="8V0-vq-2sz" secondAttribute="bottom" constant="2" id="QbP-A5-LaT"/>
+                            <constraint firstItem="iHF-0p-57t" firstAttribute="centerX" secondItem="Fmw-ck-Jl8" secondAttribute="centerX" id="ikZ-Dc-uNc"/>
+                            <constraint firstItem="iHF-0p-57t" firstAttribute="centerX" secondItem="8V0-vq-2sz" secondAttribute="centerX" id="mJu-Jm-dQ9"/>
+                            <constraint firstItem="iHF-0p-57t" firstAttribute="leading" secondItem="5ou-ab-LOl" secondAttribute="leading" constant="114" id="syb-dQ-9Vb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="Btm-Mp-3uM"/>
@@ -369,7 +373,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.forward.to.line" catalog="system" width="128" height="88"/>
+        <image name="arrow.right.to.line.compact" catalog="system" width="128" height="100"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="close-icon" width="26" height="24"/>
         <image name="favor-icon" width="30" height="30"/>
