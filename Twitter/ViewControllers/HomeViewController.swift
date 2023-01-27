@@ -28,6 +28,7 @@ class HomeViewController: UITableViewController {
             }
             strongSelf.tableView.reloadData()
         }
+        
         loadTweets()
         
         myRefreshControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
@@ -66,9 +67,9 @@ class HomeViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row + 1 == homeViewModel.tweets.count {
-                loadMoreTweets()
-            }
+            loadMoreTweets()
         }
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCell
@@ -77,7 +78,13 @@ class HomeViewController: UITableViewController {
         
         cell.userNameLabel.text = tweet.user.name
         cell.tweetContent.text = tweet.content
+        
         cell.profileImageView.af_setImage(withURL: tweet.user.profileImageUrl)
+        cell.profileImageView.layer.borderWidth = 0
+        cell.profileImageView.layer.masksToBounds = false
+        cell.profileImageView.layer.cornerRadius = cell.profileImageView.frame.height/2
+        
+        cell.profileImageView.clipsToBounds = true
         cell.tweetId = tweet.id
         cell.setfavorite(isFavorited: tweet.favorited)
         cell.setRetweeted(isRetweeted: tweet.retweeted)
@@ -88,12 +95,10 @@ class HomeViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return homeViewModel.tweets.count
     }
 }

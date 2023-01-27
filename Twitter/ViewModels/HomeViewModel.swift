@@ -16,8 +16,6 @@ class HomeViewModel: NSObject {
             self.bindHomeViewModelToController()
         }
     }
-
-
     
     var bindHomeViewModelToController: (() -> ()) = {}
     
@@ -27,7 +25,6 @@ class HomeViewModel: NSObject {
         let myParams = ["count": numberOfTweets]
         
         TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParams as [String : Any], success: { (tweets: [Tweet]) in
-            
             self.tweets = tweets
             completion()
             
@@ -43,10 +40,8 @@ class HomeViewModel: NSObject {
         let myParams  = ["count": numberOfTweets + 20]
         
         TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParams as [String : Any], success: { (tweets: [Tweet]) in
-            
             self.tweets.removeAll()
             self.tweets = tweets
-
             
             completion()
         }, failure: { (error) in
