@@ -25,11 +25,11 @@ Some of the main features include:
 - [X] User can compose a tweet.
 - [X] User can favorite a tweet.
 - [X] User can retweet a tweet.
-- [X] When composing a tweet, user sees a countdown for the number of characters remaining for the tweet (out of 280) (2pts)
+- [X] When composing a tweet, user sees a countdown for the number of characters remaining for the tweet (out of 280)
 
 The following **bonus** features are to be implemented:
-- [ ] User can view their profile in a profile tab. (3pts)
-- [ ] User sees embedded images in tweet if available. (3pts)
+- [ ] User can view their profile in a profile tab.
+- [ ] User sees embedded images in tweet if available.
 
 ## Requirements
 - iOS 13.0 or later
