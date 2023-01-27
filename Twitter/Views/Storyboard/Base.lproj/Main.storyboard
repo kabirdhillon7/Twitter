@@ -171,7 +171,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Home" id="ZSY-Ly-GWW">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" image="arrow.right.to.line.compact" catalog="system" id="NYS-FO-jMX">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" image="arrow.right.to.line" catalog="system" id="NYS-FO-jMX">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="onLogout:" destination="Ona-pL-Fcy" id="4f0-em-A3w"/>
@@ -398,7 +398,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.right.to.line.compact" catalog="system" width="128" height="100"/>
+        <image name="arrow.right.to.line" catalog="system" width="128" height="88"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="close-icon" width="26" height="24"/>
         <image name="favor-icon" width="30" height="30"/>

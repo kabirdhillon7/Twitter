@@ -48,6 +48,14 @@ class TweetCell: UITableViewCell {
         favorited = isFavorited
         if(favorited){
             favButton.setImage(UIImage(named:"favor-icon-red"), for: UIControl.State.normal)
+            
+            UIView.animate(withDuration: 0.1, animations: { [self] in
+                self.favButton.transform = favButton.transform.scaledBy(x: 0.75, y: 0.75)
+            }, completion: { _ in
+                UIView.animate(withDuration: 0.1, animations: {
+                    self.favButton.transform = CGAffineTransform.identity
+                })
+            })
         }
         else{
             favButton.setImage(UIImage(named:"favor-icon"), for: UIControl.State.normal)
