@@ -21,7 +21,6 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var favCountLabel: UILabel!
     @IBOutlet weak var retweetCountLabel: UILabel!
     
-    
     var favorited: Bool = false
     var tweetId: Int = -1
     var retweeted: Bool = false
@@ -84,13 +83,9 @@ class TweetCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
-    
 }
