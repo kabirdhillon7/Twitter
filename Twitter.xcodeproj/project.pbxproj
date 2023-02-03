@@ -94,7 +94,6 @@
 		48034892296D400400871714 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6EBCF54321E047A500451C03 /* TwitterAPICaller.swift */,
 				6EBCF52521DF07FC00451C03 /* AppDelegate.swift */,
 			);
 			path = Resources;
@@ -117,6 +116,14 @@
 				6EBCF52921DF07FC00451C03 /* Main.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		48FB9A52298CFAC900A07362 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6EBCF54321E047A500451C03 /* TwitterAPICaller.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		6BFB9ED923EC02A96AB79DEE /* Pods */ = {
@@ -149,6 +156,7 @@
 		6EBCF52421DF07FC00451C03 /* Twitter */ = {
 			isa = PBXGroup;
 			children = (
+				48FB9A52298CFAC900A07362 /* Networking */,
 				48034892296D400400871714 /* Resources */,
 				48034886296D307500871714 /* Models */,
 				48034887296D307F00871714 /* Views */,
