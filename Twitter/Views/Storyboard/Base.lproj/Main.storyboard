@@ -379,10 +379,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="Btm-Mp-3uM"/>
                     <connections>
-                        <outlet property="nameLabel" destination="6M2-fU-OAF" id="soY-kV-xya"/>
+                        <outlet property="nameLabel" destination="Tlt-gu-hUj" id="DFn-nq-xze"/>
                         <outlet property="profileImageView" destination="dhe-lh-Ynb" id="5JB-7S-4De"/>
                         <outlet property="userTweetsTableView" destination="Fg8-en-geW" id="FSf-Mp-xIF"/>
-                        <outlet property="usernameLabel" destination="Tlt-gu-hUj" id="h1c-nJ-uup"/>
+                        <outlet property="usernameLabel" destination="6M2-fU-OAF" id="7xg-AM-aYX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fvu-6e-xOY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
