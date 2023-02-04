@@ -131,7 +131,18 @@ class TwitterAPICaller: BDBOAuth1SessionManager {
         }, failure: { (task: URLSessionDataTask?, error: Error) in
             failure(error)
         })
-        
     }
     
+    func getCurrentUser(success: @escaping (User) -> (), failure: @escaping (Error) -> ()) {
+        TwitterAPICaller.client?.get("/1.1/account/verify_credentials.json", parameters: [:], progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
+            let responseDict = response as! NSDictionary
+            
+            let user = User(name: responseDict["name"] as! String,
+                            username: responseDict["screen_name"] as! String,
+                            profileImageUrl: URL(string: responseDict["profile_image_url_https"] as! String)!)
+            success(user)
+        }, failure: { (task: URLSessionDataTask?, error: Error) in
+            failure(error)
+        })
+    }
 }
