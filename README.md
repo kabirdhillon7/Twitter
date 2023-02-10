@@ -28,7 +28,7 @@ Some of the main features include:
 - [X] When composing a tweet, user sees a countdown for the number of characters remaining for the tweet (out of 280)
 
 The following **bonus** features are to be implemented:
-- [ ] User can view their profile in a profile tab.
+- [X] User can view their profile in a profile tab.
 - [ ] User sees embedded images in tweet if available.
 
 ## Requirements
