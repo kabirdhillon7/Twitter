@@ -36,36 +36,21 @@ class ProfileViewController: UIViewController {
             strongSelf.profileImageView.af_setImage(withURL: user.profileImageUrl)
             strongSelf.nameLabel.text = user.name
             
-            
-            //strongSelf.userTweetsTableView.reloadData()
+            strongSelf.userTweetsTableView.reloadData()
         }
         
         profileViewModel.getCurrentUser(success: { user in
-            // User information was successfully fetched, do something with the `user` object
             print(user)
         }, failure: { error in
-            // There was an error fetching the user information, handle the error here
             print(error.localizedDescription)
         })
+        profileViewModel.getCurrentUserTweets()
         
-//        userTweetsTableView.delegate = self
-//        userTweetsTableView.dataSource = self
-//        userTweetsTableView.reloadData()
-        //getProfileInfo()
+        userTweetsTableView.delegate = self
+        userTweetsTableView.dataSource = self
+        userTweetsTableView.reloadData()
         
     }
-    
-//    func getProfileInfo() {
-//        TwitterAPICaller.client?.getCurrentUser(success: { user in
-//            self.currentUser = user
-//            
-//            self.profileImageView.af_setImage(withURL: self.currentUser.profileImageUrl)
-//            self.nameLabel.text = self.currentUser.name
-//            self.usernameLabel.text = self.currentUser.username
-//        }, failure: { error in
-//            print(error.localizedDescription)
-//        })
-//    }
     
     func getCurrentUserTweets() {
         TwitterAPICaller.client?.get("https://api.twitter.com/1.1/statuses/user_timeline.json", parameters: ["screen_name": "current_user_screen_name"], progress: nil, success: { [self] (task: URLSessionDataTask, response: Any?) in
@@ -86,27 +71,27 @@ class ProfileViewController: UIViewController {
     }
 }
 
-//extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return currentUserTweets.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "profileTweetCell", for: indexPath) as! ProfileTweetCell
-//
-//        print("Profile cell: \(cell)")
-//
-//        let tweet = currentUserTweets[indexPath.row]
-//
-//        cell.profileImageView.af_setImage(withURL: tweet.user.profileImageUrl)
-//        cell.profileImageView.layer.borderWidth = 0
-//        cell.profileImageView.layer.masksToBounds = false
-//        cell.profileImageView.layer.cornerRadius = cell.profileImageView.frame.height/2
-//        cell.profileImageView.clipsToBounds = true
-//
-//        cell.usernameLabel.text = tweet.user.name
-//        cell.tweetLabel.text = tweet.content
-//
-//        return cell
-//    }
-//}
+extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return profileViewModel.currentUserTweets.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "profileTweetCell", for: indexPath) as! ProfileTweetCell
+        
+        print("Profile cell: \(cell)")
+        
+        let tweet = profileViewModel.currentUserTweets[indexPath.row]
+        
+        cell.profileImageView.af_setImage(withURL: tweet.user.profileImageUrl)
+        cell.profileImageView.layer.borderWidth = 0
+        cell.profileImageView.layer.masksToBounds = false
+        cell.profileImageView.layer.cornerRadius = cell.profileImageView.frame.height/2
+        cell.profileImageView.clipsToBounds = true
+        
+        cell.usernameLabel.text = tweet.user.name
+        cell.tweetLabel.text = tweet.content
+        
+        return cell
+    }
+}
