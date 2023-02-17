@@ -76,23 +76,21 @@
                                                 <constraint firstAttribute="width" secondItem="XE3-Nn-N5p" secondAttribute="height" multiplier="1:1" id="fMN-d8-BZC"/>
                                             </constraints>
                                         </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ivQ-sJ-vCU">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ivQ-sJ-vCU">
                                             <rect key="frame" x="67" y="0.0" width="361" height="150"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WrB-xd-v7o">
-                                                    <rect key="frame" x="0.0" y="0.0" width="68.666666666666671" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="John Doe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WrB-xd-v7o">
+                                                    <rect key="frame" x="0.0" y="0.0" width="68.666666666666671" height="100"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Tweet Content" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqE-Eh-nTx">
-                                                    <rect key="frame" x="0.0" y="18" width="104.33333333333333" height="102"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    <color key="textColor" systemColor="labelColor"/>
-                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Tweet" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1M3-qt-64d">
+                                                    <rect key="frame" x="0.0" y="101" width="41.333333333333336" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <stackView opaque="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="nc3-jb-320">
                                                     <rect key="frame" x="0.0" y="120" width="122" height="30"/>
                                                     <subviews>
@@ -145,7 +143,7 @@
                                     <outlet property="profileImageView" destination="XE3-Nn-N5p" id="Y5z-0I-NkL"/>
                                     <outlet property="retweetButton" destination="t20-dE-EVD" id="BoA-r2-IdJ"/>
                                     <outlet property="retweetCountLabel" destination="TfQ-oJ-gNB" id="2hf-nF-uj2"/>
-                                    <outlet property="tweetContent" destination="aqE-Eh-nTx" id="e4a-cb-iDO"/>
+                                    <outlet property="tweetContent" destination="1M3-qt-64d" id="77e-Ep-BmW"/>
                                     <outlet property="userNameLabel" destination="WrB-xd-v7o" id="dRp-ew-gMu"/>
                                 </connections>
                             </tableViewCell>
