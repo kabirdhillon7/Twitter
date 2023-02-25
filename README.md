@@ -6,31 +6,29 @@ Twitter is in proccess of being designed using the Model-View-ViewModel (MVVM) p
 ## Table of Contents
 
 - [Description](#description)
-- [Requirements](#Requirements)
+- [Requirements](#requirements)
 - [Demo](#demo)
 - [Installation](#installation)
-- [Testing](#testing)
+- [Dependencies](#dependencies)
 - [Contact](#contact)
 
 ## Description
 
 Some of the main features include:
-- [X] User sees app icon in home screen and styled launch screen.
-- [X] User can log in.
-- [X] User can log out.
-- [X] User stays logged in across restarts.
-- [X] User can view tweets with the user profile picture, username, and tweet text.
-- [X] User can pull to refresh.
-- [X] User can load past tweets infinitely.
-- [X] User can compose a tweet.
-- [X] User can favorite a tweet.
-- [X] User can retweet a tweet.
-- [X] When composing a tweet, user sees a countdown for the number of characters remaining for the tweet (out of 280)
-- [X] User can view their profile in a profile tab.
+
+- User can log into their Twitter account, and stay logged in across restarts.
+- User can view a tab bar with a home and user profile tab.
+- Home Tab
+  - User can view tweets with the user profile picture, username, and tweet text
+  - User can pull to refresh using a UIRefreshControl, and load tweets infinitely.
+  - User can can retweet and favorite tweets
+  - User can use navigation bar to logout and compose a tweet with a countdown for the number of characters remaining for the tweet (out of 280)
+- Profile Tab
+  - User can view their user profile in a profile tab
 
 ## Requirements
-- iOS 13.0 or later
-- iPhone 6s or newer
+- iOS 15.0 or later
+- iPhone 6s or iPhone SE (1st generation) or newer
 - iPod touch 7th generation or newer
 
 ## Demo
@@ -89,11 +87,6 @@ class TwitterAPICaller: BDBOAuth1SessionManager {
     static let client = TwitterAPICaller(baseURL: URL(string: "https://api.twitter.com"), consumerKey: TwitterAPI.consumerKey, consumerSecret: TwitterAPI.consumerSecret)
 }
 ```
-
-
-## Testing
-
-Information on how to test the project, including any automation scripts or test suites that have been set up.
 
 ## Dependencies
   
